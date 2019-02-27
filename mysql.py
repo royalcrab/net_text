@@ -1,5 +1,7 @@
 import subprocess
+import sys
 
+args = sys.argv
 pwd = "--password==%s" % args[1]
 print( pwd )
 
