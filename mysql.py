@@ -7,7 +7,10 @@ print( pwd )
 
 p = subprocess.Popen(["mosquitto_sub", "-h", "localhost", "-t", "/test"], stdout=subprocess.PIPE)
 for line in iter(p.stdout.readline,b''):
-    print(line.rstrip().decode("utf8"))
-    subprocess.Popen(["mysql", "-u", "kani", pwd, "iot","--execute=show databases"])
+#    subprocess.Popen(["mysql", "-u", "kani", pwd, "iot","--execute=show databases"])
+
+    cmd = "--execute=" + "INSERT INTO iot.sensor_data (time, temp) VALUES (now(), %f);" % line.rstrip()
+    print( cmd )
+#    subprocess.Popen(["mysql", "-u", "kani", pwd, "iot", cmd])
 
 # subprocess.Popen(["mysql", "-u", "kani", pwd, "iot","--execute=show databases"])
