@@ -2,7 +2,7 @@ import subprocess
 import sys
 
 args = sys.argv
-pwd = "--password==" + args[1]
+pwd = "--password=" + args[1]
 print( pwd )
 
 #p = subprocess.Popen(["mosquitto_sub", "-h localhost", "-t /test"], stdout=subprocess.PIPE)
