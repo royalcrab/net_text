@@ -1,7 +1,7 @@
 import subprocess
 
 pwd = "--password==%s" % args[1]
-print pwd
+print( pwd )
 
 #p = subprocess.Popen(["mosquitto_sub", "-h localhost", "-t /test"], stdout=subprocess.PIPE)
 #for line in iter(p.stdout.readline,b''):
