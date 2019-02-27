@@ -9,3 +9,5 @@ print( pwd )
 #for line in iter(p.stdout.readline,b''):
 #    print(line.rstrip().decode("utf8"))
 #    subprocess.Popen(["mysql", "-u", "kani", "--password=hogehoge", "iot","--execute=show databases"])
+
+subprocess.Popen(["mysql", "-u", "kani", pwd, "iot","--execute=show databases"])
